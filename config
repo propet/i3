@@ -67,7 +67,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+#bindsym $mod+h split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -160,3 +160,15 @@ bar {
 # Pulse Audio controls
 bindsym Control+Shift+Up exec pactl set-sink-volume 0 +5% #increase sound volume
 bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volume
+
+
+# Wallpaper
+exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
+
+# i3-gaps
+for_window [class="^.*"] border pixel 0 # remove title bars
+gaps inner 10
+gaps outer 15
+
+# Transparent windows with compoton (sudo apt-get install compton)
+exec_always compton -b --config ~/.config/i3/compton.conf
