@@ -13,7 +13,10 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 8
+font pango:monospace 10
+
+# Change resolution
+exec xrandr --output DVI-I-1 --mode 1280x1024
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -37,6 +40,9 @@ bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
+
+# lock the screen like in gnome or unity
+bindsym Control+Mod1+l exec i3lock
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
@@ -92,29 +98,49 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+set $workspace1 "1:Firefox"
+set $workspace2 "2:Nemo"
+set $workspace3 "3:Terminals"
+set $workspace4 "4"
+set $workspace5 "5"
+set $workspace6 "6:vlc"
+set $workspace7 "7"
+set $workspace8 "8:okular"
+set $workspace9 "9:gimp"
+set $workspace10 "10:anki"
+#
+# use xprop in terminal to figure out the class of every app
+assign [class="Firefox"] $workspace1
+assign [class="Nemo"] $workspace2
+assign [class="vlc"] $workspace6
+assign [class="okular"] $workspace8
+assign [class="Gimp"] $workspace9
+assign [class="Anki"] $workspace10
+
 # switch to workspace
-bindsym $mod+1 workspace 1
-bindsym $mod+2 workspace 2
-bindsym $mod+3 workspace 3
-bindsym $mod+4 workspace 4
-bindsym $mod+5 workspace 5
-bindsym $mod+6 workspace 6
-bindsym $mod+7 workspace 7
-bindsym $mod+8 workspace 8
-bindsym $mod+9 workspace 9
-bindsym $mod+0 workspace 10
+bindsym $mod+1 workspace $workspace1
+bindsym $mod+2 workspace $workspace2
+bindsym $mod+3 workspace $workspace3
+bindsym $mod+4 workspace $workspace4
+bindsym $mod+5 workspace $workspace5
+bindsym $mod+6 workspace $workspace6
+bindsym $mod+7 workspace $workspace7
+bindsym $mod+8 workspace $workspace8
+bindsym $mod+9 workspace $workspace9
+bindsym $mod+0 workspace $workspace10
 
 # move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace 1
-bindsym $mod+Shift+2 move container to workspace 2
-bindsym $mod+Shift+3 move container to workspace 3
-bindsym $mod+Shift+4 move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+6 move container to workspace 6
-bindsym $mod+Shift+7 move container to workspace 7
-bindsym $mod+Shift+8 move container to workspace 8
-bindsym $mod+Shift+9 move container to workspace 9
-bindsym $mod+Shift+0 move container to workspace 10
+bindsym $mod+Shift+1 move container to workspace $workspace1
+bindsym $mod+Shift+2 move container to workspace $workspace2
+bindsym $mod+Shift+3 move container to workspace $workspace3
+bindsym $mod+Shift+4 move container to workspace $workspace4
+bindsym $mod+Shift+5 move container to workspace $workspace5
+bindsym $mod+Shift+6 move container to workspace $workspace6
+bindsym $mod+Shift+7 move container to workspace $workspace7
+bindsym $mod+Shift+8 move container to workspace $workspace8
+bindsym $mod+Shift+9 move container to workspace $workspace9
+bindsym $mod+Shift+0 move container to workspace $workspace10
+
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -161,9 +187,13 @@ bar {
 bindsym Control+Shift+Up exec pactl set-sink-volume 0 +5% #increase sound volume
 bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volume
 
-
 # Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
+
+# pywall, apply colorscheme of wallpaper to terminals
+exec_always wal -c -i ~/Pictures/wallpaper/wallpaper.jpg
+bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
+
 
 # i3-gaps
 for_window [class="^.*"] border pixel 0 # remove title bars
