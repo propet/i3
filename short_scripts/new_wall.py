@@ -2,7 +2,7 @@ import os
 import shutil
 import random
 
-images = os.listdir("~/Pictures/wallpapers")
+images = os.listdir(os.path.expanduser('~') + "/Pictures/wallpapers")
 
 
 # Rename files to avoid spaces
