@@ -99,24 +99,28 @@ bindsym $mod+a focus parent
 # focus the child container
 #bindsym $mod+d focus child
 
+
 set $workspace1 "1:Firefox"
-set $workspace2 "2:Nemo"
-set $workspace3 "3:Terminals"
-set $workspace4 "4"
+set $workspace2 "2:Files"
+set $workspace3 "3:Terminal"
+set $workspace4 "4:gimp"
 set $workspace5 "5"
-set $workspace6 "6:vlc"
+set $workspace6 "6"
 set $workspace7 "7"
-set $workspace8 "8:okular"
-set $workspace9 "9:gimp"
+set $workspace8 "8"
+set $workspace9 "9:pdf"
 set $workspace10 "10:anki"
 #
 # use xprop in terminal to figure out the class of every app
 assign [class="Firefox"] $workspace1
 assign [class="Nemo"] $workspace2
-assign [class="vlc"] $workspace6
-assign [class="okular"] $workspace8
-assign [class="Gimp"] $workspace9
+assign [class="Nautilus"] $workspace2
+assign [class="Gimp"] $workspace4
+assign [class="okular"] $workspace9
 assign [class="Anki"] $workspace10
+
+# always open the peek application as a floating window
+for_window [class="Peek"] floating enable
 
 # switch to workspace
 bindsym $mod+1 workspace $workspace1
@@ -212,4 +216,3 @@ exec_always compton -b --config ~/.config/i3/compton.conf
 
 # Startup apps
 exec nemo
-exec firefox
