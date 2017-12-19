@@ -191,6 +191,10 @@ bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volu
 # Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
 
+# change keyboard language with Windows+space
+exec_always "setxkbmap -layout gb,es"
+exec_always "setxkbmap -option 'grp:win_space_toggle'"
+
 # pywall, apply colorscheme of wallpaper to terminals
 # python script change wallpaper to random one, and then restart the config to show the wallpapper
 #bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
