@@ -1,20 +1,20 @@
 import os
-import shutil
 import random
 
-images = os.listdir(os.path.expanduser('~') + "/Pictures/wallpapers")
+home = os.path.expanduser('~')
+images = os.listdir(home + "/Pictures/wallpapers")
 
-
-# Rename files to avoid spaces
-#for i in os.list():
-#    os.rename(i, i.replace(' ', ''))
 
 rnd_img = random.choice(images)
 
 # Try to remove the previous wallpaper if there was any
-os.system("touch ~/Pictures/wallpaper/tmp")
-os.system("rm ~/Pictures/wallpaper/*")
+wallpaper_folder = home + "/Pictures/wallpaper/"
+os.system("touch {}tmp".format(wallpaper_folder))
+os.system("rm {}*".format(wallpaper_folder))
+# os.system("touch ~/Pictures/wallpaper/tmp")
+# os.system("rm ~/Pictures/wallpaper/*")
 
 
 # copia la imagen aleatoria a la carpeta de wallpaper como wallpaper.jpg
-os.system("cp " + "~/Pictures/wallpapers/" + rnd_img + " ~/Pictures/wallpaper/wallpaper.jpg")
+wallpapers_folder = home + "/Pictures/wallpapers/"
+os.system("cp " + wallpapers_folder + rnd_img + " {}wallpaper.jpg".format(wallpaper_folder))
