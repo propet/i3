@@ -191,8 +191,10 @@ bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volu
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
 
 # pywall, apply colorscheme of wallpaper to terminals
-exec_always wal -c -i ~/Pictures/wallpaper/wallpaper.jpg
-bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
+# python script change wallpaper to random one, and then restart the config to show the wallpapper
+#bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
+bindsym Control+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
+exec_always wal -t -c -i ~/Pictures/wallpaper/wallpaper.jpg
 
 
 # i3-gaps
