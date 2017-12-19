@@ -17,6 +17,7 @@ font pango:monospace 10
 
 # Change resolution
 exec xrandr --output DVI-I-1 --mode 1280x1024
+#exec xrandr --output LVDS1 --mode 1024x600
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
