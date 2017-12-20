@@ -202,7 +202,7 @@ exec_always "setxkbmap -option 'grp:win_space_toggle'"
 # pywall, apply colorscheme of wallpaper to terminals
 # python script change wallpaper to random one, and then restart the config to show the wallpapper
 #bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
-bindsym Control+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
+bindsym Control+Shift+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
 exec_always wal -t -c -i ~/Pictures/wallpaper/wallpaper.jpg
 
 
@@ -216,3 +216,4 @@ exec_always compton -b --config ~/.config/i3/compton.conf
 
 # Startup apps
 exec nemo
+exec anki
