@@ -195,6 +195,18 @@ bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volu
 # Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
 
+# #####################
+# Screenshots shortcuts
+# screenshots whole screen to Pictures
+bindsym Print exec scrot -m $HOME/Pictures/%s_%H%M_%d.%m.%Y_$wx$h.png
+# screenshot a selection window to Pictures
+bindsym --release Shift+Print exec scrot -s $HOME/Pictures/%s_%H%M_%d%m%Y_$wx$h.png
+# screenshot whole screen to clipboard
+bindsym --release Control+Print exec "scrot -m $HOME/Pictures/screenshot_tmp.png && xclip -t image/png -selection clipboard $HOME/Pictures/screenshot_tmp.png && rm $HOME/Pictures/screenshot_tmp"
+# screenshot a selection window to clipboard
+bindsym --release Control+Shift+Print exec "scrot -s $HOME/Pictures/screenshot_tmp.png && xclip -t image/png -selection clipboard $HOME/Pictures/screenshot_tmp.png && rm $HOME/Pictures/screenshot_tmp.png" 
+#######################
+
 # change keyboard language with Windows+space
 exec_always "setxkbmap -layout gb,es"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
