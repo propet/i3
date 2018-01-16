@@ -192,8 +192,11 @@ bar {
 
 
 # Pulse Audio controls
-bindsym Control+Shift+Up exec pactl set-sink-volume 0 +5% #increase sound volume
-bindsym Control+Shift+Down exec pactl set-sink-volume 0 -5% #decrease sound volume
+# The first number after set-sink-volume is the sink to use. This may not be 0 or 1 in your system.
+# To list the posibilities: $ pactl list short sinks
+bindsym Control+Shift+Up exec pactl set-sink-volume 1 +5% #increase sound volume
+bindsym Control+Shift+Down exec pactl set-sink-volume 1 -5% #decrease sound volume
+
 
 # Wallpaper
 exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
