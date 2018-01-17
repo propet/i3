@@ -120,6 +120,7 @@ assign [class="Gimp"] $workspace4
 assign [class="vlc"] $workspace5
 assign [class="Evince"] $workspace9
 assign [class="okular"] $workspace9
+assign [class="Zathura"] $workspace9
 assign [class="Anki"] $workspace10
 
 # always open the peek application as a floating window
