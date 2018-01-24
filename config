@@ -224,14 +224,21 @@ exec_always "setxkbmap -option 'grp:win_space_toggle'"
 bindsym Control+Shift+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
 exec_always wal -t -c -i ~/Pictures/wallpaper/wallpaper.jpg
 
+# class           border  backgr. text    indicator child_border
+client.focused    #4c7899 #285577 #ffffff #2e9ef4   #285577
 
 # i3-gaps
-for_window [class="^.*"] border pixel 0 # remove title bars
+for_window [class="^.*"] border pixel 2 # remove title bars
 gaps inner 10
 gaps outer 15
 
 # Transparent windows with compoton (sudo apt-get install compton)
 exec_always compton -b --config ~/.config/i3/compton.conf
+
+# Avoid screen from turning off after some time without mouse or keyboard input
+exec --no-startup-id xset s off
+exec --no-startup-id xset -dpms
+exec --no-startup-id xset s noblank
 
 # Startup apps
 exec nemo
