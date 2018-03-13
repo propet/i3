@@ -105,7 +105,7 @@ set $workspace1 "1:Firefox"
 set $workspace2 "2:Files"
 set $workspace3 "3:Terminal"
 set $workspace4 "4:gimp"
-set $workspace5 "5:vlc"
+set $workspace5 "5:media"
 set $workspace6 "6"
 set $workspace7 "7"
 set $workspace8 "8"
@@ -118,6 +118,7 @@ assign [class="Nemo"] $workspace2
 assign [class="Nautilus"] $workspace2
 assign [class="Gimp"] $workspace4
 assign [class="vlc"] $workspace5
+assign [class="Totem"] $workspace5
 assign [class="Evince"] $workspace9
 assign [class="okular"] $workspace9
 assign [class="Zathura"] $workspace9
