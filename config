@@ -16,8 +16,9 @@ set $mod Mod4
 font pango:monospace 10
 
 # Change resolution
-exec xrandr --output DVI-I-1 --mode 1280x1024
+exec xrandr --output HDMI-1 --mode 1920x1080
 #exec xrandr --output LVDS1 --mode 1024x600
+#exec xrandr --output DVI-I-1 --mode 1280x1024
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -92,7 +93,7 @@ bindsym $mod+e layout toggle split
 bindsym --release Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+#bindsym $mod+space focus mode_toggle # conflicting with change language shortcut!
 
 # focus the parent container
 bindsym $mod+a focus parent
