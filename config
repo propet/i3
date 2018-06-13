@@ -227,6 +227,7 @@ bindsym --release Control+Shift+Print exec "scrot -s $HOME/Pictures/screenshot_t
 exec_always "setxkbmap -layout gb,es"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
 
+
 # pywall, apply colorscheme of wallpaper to terminals
 # python script change wallpaper to random one, and then restart the config to show the wallpapper
 #bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
@@ -248,6 +249,9 @@ exec_always compton -b --config ~/.config/i3/compton.conf
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+
+# keyboard repetition speed
+exec xset r rate 300 50
 
 # Startup apps
 exec nemo
