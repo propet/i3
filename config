@@ -114,13 +114,13 @@ set $workspace8 "8"
 set $workspace9 "9"
 
 # use xprop in terminal to figure out the class of every app
+assign [class="Anki"] $workspace0
 assign [class="Firefox"] $workspace1
 assign [class="Nemo"] $workspace2
 assign [class="Nautilus"] $workspace2
 assign [class="Gimp"] $workspace4
 assign [class="vlc"] $workspace5
 assign [class="Totem"] $workspace5
-assign [class="Anki"] $workspace6
 assign [class="Evince"] $workspace9
 assign [class="okular"] $workspace9
 assign [class="Zathura"] $workspace9
