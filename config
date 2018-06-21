@@ -228,14 +228,34 @@ exec_always "setxkbmap -layout gb,es"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
 
 
+# ######################################################################
 # pywall, apply colorscheme of wallpaper to terminals
 # python script change wallpaper to random one, and then restart the config to show the wallpapper
 #bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
 bindsym Control+Shift+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
 exec_always wal -t -c -i ~/Pictures/wallpaper/wallpaper.jpg
 
-# class           border  backgr. text    indicator child_border
-client.focused    #4c7899 #285577 #ffffff #2e9ef4   #285577
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $fg     $fg     $fg  $fg       $fg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
+
+# PROTIP: You can also dynamically set dmenu's colors this way:
+# bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
+# ######################################################################
+
 
 # i3-gaps
 for_window [class="^.*"] border pixel 2 # remove title bars
