@@ -1,14 +1,14 @@
 # i3 config files and instructions to install in ubuntu
-___
+
 
 ## Assumptions
-___
+
 
 This repo goes in **~/.config/i3/**
 
 It also requires **~/.config/polybar**, which belongs to another github repo.
 
-It expects a wallpapers folder like **~/Pictures/wallpapers/** (also create a **~/Pictures/wallpaper/** folder) where images don't have any spaces in their filenames.
+It expects a wallpapers folder like **~/Pictures/wallpapers/** (also create a **~/Pictures/wallpaper/** folder) where you keep your collection of wallpaper images and they don't have any spaces in their filenames (with Ctrl+Shift+b you'll be selecting one of this image for your wallpaper at random).
 You could remove the spaces in those filenames doing inside the folder:
 ```python
 import os
@@ -19,7 +19,7 @@ for file in os.listdir():
 
 
 ## Installation
-___
+
 
 * Install i3-gaps:
 
@@ -47,12 +47,13 @@ https://github.com/Airblader/i3/wiki/Compiling-&-Installing
 
 
 ## Customization
-___
+
 
 ### Keep pywal style for new terminal windows
 
-Append `(cat ~/.cache/wal/sequences &)` line to **~/.bashrc** file.
+Append the following line to your **~/.bashrc** file.
 
+`(cat ~/.cache/wal/sequences &)`
 
 ### set gtk theme from wal colorscheme
 * Install Oomox https://github.com/themix-project/oomox
@@ -99,7 +100,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
 
 ## Usage
-___
+
 
 * `Control+Shift+Up` & `Control+Shift+Down`
 
