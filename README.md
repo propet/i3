@@ -97,7 +97,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
 ### Misc
 
-* Show wallpaper image with neofetch: `neofetch --i3wm`
+* Show wallpaper image with neofetch: `neofetch --w3m ~/Pictures/wallpaper/wallpaper.jpg`
 
 * Tune your keyboard repetition speed with `xset`, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
 
