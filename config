@@ -269,9 +269,10 @@ client.background       $bg
 # i3-gaps
 # Usage: press $mod+Shift+g to enter gaps resizing mode
 # --------
-for_window [class="^.*"] border pixel 2 # remove title bars
-gaps inner 10
-gaps outer 15
+for_window [class="^.*"] border pixel 0 # remove title bars
+# smart_gaps on # only use gaps when there is more than one container in workspace
+gaps inner 20
+gaps outer 25
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -321,4 +322,4 @@ exec xset r rate 300 50
 
 # Startup apps
 exec nemo
-exec anki
+# exec anki
