@@ -101,6 +101,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
 * Tune your keyboard repetition speed with `xset`, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
 
+* A good pipe animation program for terminal is https://github.com/pipeseroni/pipes.sh
 
 
 ## Usage
