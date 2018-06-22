@@ -99,7 +99,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
 * Show wallpaper image with neofetch: `neofetch --i3wm`
 
-* Tune your keyboard repetition speed with **xset**, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
+* Tune your keyboard repetition speed with `xset`, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
 
 
 
@@ -108,7 +108,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
 * *Control+Shift+Up* & *Control+Shift+Down*
 
-  Keybindings to increase/decrease the volume using **pactl**.
+  Keybindings to increase/decrease the volume using `pactl`.
 
 * *$mod+space*
 
