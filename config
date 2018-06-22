@@ -216,8 +216,6 @@ exec_always pactl set-default-sink 1
 bindsym Control+Shift+Up exec pactl set-sink-volume 1 +5% #increase sound volume
 bindsym Control+Shift+Down exec pactl set-sink-volume 1 -5% #decrease sound volume
 
-# Wallpaper
-exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
 
 # #####################
 # Screenshots shortcuts
@@ -236,11 +234,18 @@ exec_always "setxkbmap -layout gb,es"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
 
 
-# ######################################################################
+# ---------
+# Wallpaper
+# ---------
+exec_always feh --bg-scale ~/Pictures/wallpaper/wallpaper.jpg
+# ---------
+# --
 # pywall, apply colorscheme of wallpaper to terminals
-# python script change wallpaper to random one, and then restart the config to show the wallpapper
+# python script change wallpaper to random one, and then restart the config to show the wallpapper.
 #bindsym Control+b exec "python ~/scripts/new_wall.py && i3-msg -t command restart"
 bindsym Control+Shift+b exec "python ~/.config/i3/short_scripts/new_wall.py && i3-msg -t command restart"
+# Update the gtk wal theme. (requires Oomox installed)
+bindsym $mod+Control+Shift+b exec "exec wal -g -i ~/Pictures/wallpaper/wallpaper.jpg &&i3-msg -t command restart"
 exec_always wal -t -c -i ~/Pictures/wallpaper/wallpaper.jpg
 
 # Set colors from Xresources
@@ -262,7 +267,8 @@ client.background       $bg
 
 # PROTIP: You can also dynamically set dmenu's colors this way:
 # bindsym $mod+d exec dmenu_run -nb "$fg" -nf "$bg" -sb "$bg" -sf "$fg"
-# ######################################################################
+# --
+# ---------
 
 
 # --------
