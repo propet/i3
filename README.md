@@ -114,7 +114,7 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 
   Toogle keyboard language: between spanish and british.
 
-* *$Shift+space*
+* *Shift+space*
 
   Remaping of toogle between windowed mode and tiling mode.
 
