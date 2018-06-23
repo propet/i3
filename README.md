@@ -6,7 +6,7 @@
 
 This repo goes in **~/.config/i3/**
 
-It also requires **~/.config/polybar**, which belongs to another github repo.
+It also requires **~/.config/polybar**, which belongs to another github repo. Polybar has its own dependencies.
 
 It expects a wallpapers folder like **~/Pictures/wallpapers/** (also create a **~/Pictures/wallpaper/** folder) where you keep your collection of wallpaper images and they don't have any spaces in their filenames (with Ctrl+Shift+b you'll be selecting one of this image for your wallpaper at random).
 You could remove the spaces in those filenames doing inside the folder:
