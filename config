@@ -275,7 +275,7 @@ client.background       $bg
 # i3-gaps
 # Usage: press $mod+Shift+g to enter gaps resizing mode
 # --------
-for_window [class="^.*"] border pixel 2 # remove title bars
+for_window [class="^.*"] border pixel 1 # remove title bars
 # smart_gaps on # only use gaps when there is more than one container in workspace
 gaps inner 20
 gaps outer 25
