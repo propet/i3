@@ -51,13 +51,13 @@ https://github.com/Airblader/i3/wiki/Compiling-&-Installing
 ## Customization
 
 
-### Keep pywal style for new terminal windows
+* Keep pywal style for new terminal windows
 
 Append the following line to your **~/.bashrc** file.
 
 `(cat ~/.cache/wal/sequences &)`
 
-### set gtk theme from wal colorscheme
+* set gtk theme from wal colorscheme
 * Install Oomox https://github.com/themix-project/oomox
 
   A wal dependency to generate gtk themes from images.
@@ -77,7 +77,7 @@ After the first setup, you can repeat the operation of replacing the gtk wal the
     gtk applications must be restarted to see the effects.
 
 
-### gnome-terminal inner padding
+* gnome-terminal inner padding
 
 Create following file: **~/.config/gtk-3.0/gtk.css**
 And append to it: 
@@ -91,9 +91,28 @@ vte-terminal {
 ```
 
 
-### vim/neovim wal colorscheme
+* vim/neovim wal colorscheme
 
 Vim gets its colorscheme from pywal using the following plugin: https://github.com/dylanaraps/wal.vim
+
+* Zathura pdf reader customization
+
+The customization of zathura is be managed via a configuration file called zathurarc. By default zathura will evaluate the following files:
+
+  + /etc/zathurarc
+  + $XDG_CONFIG_HOME/zathura/zathurarc (default: ~/.config/zathura/zathurarc)
+
+Example:
+```
+set selection-clipboard clipboard
+
+/* You can see wal colorscheme colors in ~/.cache/wal/colors.yml */
+/* set recolor-darkcolor "<hexColorText_walColor2" */
+/* set recolor-lightcolor "hexColorPaper_walColor7" */ // 
+set recolor-darkcolor "#BB6213"
+set recolor-lightcolor "#dbb187"
+set recolor  // apply coloring
+```
 
 ### Misc
 
@@ -102,6 +121,8 @@ Vim gets its colorscheme from pywal using the following plugin: https://github.c
 * Tune your keyboard repetition speed with `xset`, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
 
 * A good pipe animation program for terminal is https://github.com/pipeseroni/pipes.sh
+
+* A nice music visualizator is `cava` https://github.com/karlstav/cava
 
 
 ## Usage
