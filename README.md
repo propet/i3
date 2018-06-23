@@ -114,9 +114,12 @@ set recolor-lightcolor "#dbb187"
 set recolor  // apply coloring
 ```
 
+* Override firefox style with system colors for all webpages: (Preferences >> Fonts&Colors >> Colors).
+
 ### Misc
 
 * Show wallpaper image with neofetch: `neofetch --w3m ~/Pictures/wallpaper/wallpaper.jpg`
+
 
 * Tune your keyboard repetition speed with `xset`, to which you can pass the speed at which the repetition mode is trigered, and the speed of those repetitions. (e.g. `xset r rate 300 50`)
 
