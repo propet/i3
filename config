@@ -230,8 +230,8 @@ bindsym --release Control+Shift+Print exec "scrot -s $HOME/Pictures/screenshot_t
 #######################
 
 # change keyboard language with Windows+space
-exec_always "setxkbmap -layout gb,es"
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
+exec_always "setxkbmap -layout gb,es"
 
 
 # ---------
@@ -322,6 +322,9 @@ exec_always compton -b --config ~/.config/i3/compton.conf
 exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
+
+# Dynu client for dynamic hosting
+exec systemctl start dynuiuc.service
 
 # keyboard repetition speed
 exec xset r rate 300 50
