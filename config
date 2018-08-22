@@ -275,7 +275,7 @@ client.background       $bg
 # i3-gaps
 # Usage: press $mod+Shift+g to enter gaps resizing mode
 # --------
-for_window [class="^.*"] border pixel 1 # remove title bars
+for_window [class="^.*"] border pixel 2 # remove title bars (almost)
 # smart_gaps on # only use gaps when there is more than one container in workspace
 gaps inner 20
 gaps outer 25
@@ -324,6 +324,7 @@ exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 
 # Dynu client for dynamic hosting
+# To avoid the password prompt, run this script with sudo permissions (sudo chmod +s <myscript>)
 exec systemctl start dynuiuc.service
 
 # keyboard repetition speed
