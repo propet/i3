@@ -213,8 +213,8 @@ exec_always "--no-startup-id $HOME/.config/polybar/launch.sh"
 # My PC sink numbers: 0=>hdmi speakers, 1=>headphones
 # You may need to restart the application to change the volume sink
 exec_always pactl set-default-sink 1
-bindsym Control+Shift+Up exec pactl set-sink-volume 1 +5% #increase sound volume
-bindsym Control+Shift+Down exec pactl set-sink-volume 1 -5% #decrease sound volume
+bindsym Control+Shift+Up exec pactl set-sink-volume 1 +1% #increase sound volume
+bindsym Control+Shift+Down exec pactl set-sink-volume 1 -1% #decrease sound volume
 
 
 # #####################
@@ -332,4 +332,4 @@ exec xset r rate 300 50
 
 # Startup apps
 exec nemo
-# exec anki
+exec anki
