@@ -196,15 +196,25 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-        # status_command i3status --config ~/.config/i3/i3status.conf
-        i3bar_command $HOME/.config/polybar/launch.sh  # polybar bar
-}
+# bar {
+#         status_command i3status --config ~/.config/i3/i3status.conf
+#         position bottom
+
+#         colors {
+#           statusline #76c2d6
+
+#           # Type                     border     background    text
+#           focused_workspace         #000000      #000000    #fff
+#           active_workspace          #000000      #000000    #696f89
+#           inactive_workspace        #000000      #000000    #696f89
+#           urgent_workspace          #000000      #000000    #c7a551
+#         }
+# }
 
 # -------------------
 # polybar
 # -------------------
-exec_always "--no-startup-id $HOME/.config/polybar/launch.sh"
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 # -------------------
 
 # Pulse Audio controls
@@ -212,9 +222,11 @@ exec_always "--no-startup-id $HOME/.config/polybar/launch.sh"
 # To list the posibilities: $ pactl list short sinks
 # My PC sink numbers: 0=>hdmi speakers, 1=>headphones
 # You may need to restart the application to change the volume sink
-exec_always pactl set-default-sink 1
-bindsym Control+Shift+Up exec pactl set-sink-volume 1 +1% #increase sound volume
-bindsym Control+Shift+Down exec pactl set-sink-volume 1 -1% #decrease sound volume
+# exec_always pactl set-default-sink 1
+# bindsym Control+Shift+Up exec pactl set-sink-volume 1 +1% #increase sound volume
+# bindsym Control+Shift+Down exec pactl set-sink-volume 1 -1% #decrease sound volume
+bindsym Control+Shift+Up exec amixer set Master 1%+
+bindsym Control+Shift+Down exec amixer set Master 1%-
 
 
 # #####################
@@ -277,8 +289,8 @@ client.background       $bg
 # --------
 for_window [class="^.*"] border pixel 2 # remove title bars (almost)
 # smart_gaps on # only use gaps when there is more than one container in workspace
-gaps inner 20
-gaps outer 25
+gaps inner 10
+gaps outer 10
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -323,9 +335,13 @@ exec --no-startup-id xset s off
 exec --no-startup-id xset -dpms
 exec --no-startup-id xset s noblank
 
+# Siji fonts
+exec xset +fp /home/luis/.fonts
+exec xset fp rehash
+
 # Dynu client for dynamic hosting
 # To avoid the password prompt, run this script with sudo permissions (sudo chmod +s <myscript>)
-exec systemctl start dynuiuc.service
+# exec systemctl start dynuiuc.service
 
 # keyboard repetition speed
 exec xset r rate 300 50
@@ -333,3 +349,4 @@ exec xset r rate 300 50
 # Startup apps
 exec nemo
 exec anki
+exec firefox
