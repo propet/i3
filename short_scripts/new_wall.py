@@ -6,6 +6,8 @@ images = os.listdir(home + "/Pictures/wallpapers")
 
 
 rnd_img = random.choice(images)
+# surround image name by " to allow spaces in the name
+rnd_img = '"' + rnd_img + '"'
 
 # Try to remove the previous wallpaper if there was any
 wallpaper_folder = home + "/Pictures/wallpaper/"

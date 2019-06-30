@@ -289,8 +289,8 @@ client.background       $bg
 # --------
 for_window [class="^.*"] border pixel 2 # remove title bars (almost)
 # smart_gaps on # only use gaps when there is more than one container in workspace
-gaps inner 10
-gaps outer 10
+gaps inner 5
+gaps outer 3
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
 set $mode_gaps_inner Inner Gaps: +|-|0 (local), Shift + +|-|0 (global)
