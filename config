@@ -243,7 +243,7 @@ bindsym --release Control+Shift+Print exec "scrot -s $HOME/Pictures/screenshot_t
 
 # change keyboard language with Windows+space
 exec_always "setxkbmap -option 'grp:win_space_toggle'"
-exec_always "setxkbmap -layout gb,es"
+exec_always "setxkbmap -layout 'us,es' -variant 'altgr-intl,'"
 
 
 # ---------
